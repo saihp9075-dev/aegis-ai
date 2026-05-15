@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[data-aegis-theme='dark'] {
+  color-scheme: dark;
+  --aegis-bg: #000000;
+  --aegis-fg: #ffffff;
+  --aegis-card: #0b0b0f;
+  --aegis-muted: rgba(255, 255, 255, 0.6);
+  --aegis-border: rgba(255, 255, 255, 0.06);
+  --aegis-nav: rgba(0, 0, 0, 0.6);
+  --aegis-input: rgba(0, 0, 0, 0.5);
+}
+
+html[data-aegis-theme='light'] {
+  color-scheme: light;
+  --aegis-bg: #eef0f6;
+  --aegis-fg: #0c0c0e;
+  --aegis-card: #ffffff;
+  --aegis-muted: rgba(12, 12, 14, 0.62);
+  --aegis-border: rgba(0, 0, 0, 0.1);
+  --aegis-nav: rgba(255, 255, 255, 0.92);
+  --aegis-input: #ffffff;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--aegis-bg);
+  color: var(--aegis-fg);
+}
+
+.large-text {
+  font-size: 112%;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--aegis-border);
+  backdrop-filter: blur(18px);
+}
+
+html[data-aegis-theme='light'] .glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.88));
+}
+
+.leaflet-container {
+  background: #050508;
+  font-family: inherit;
+}
+
+html[data-aegis-theme='light'] .leaflet-container {
+  background: #d8dce8;
+}
+
+.aegis-osm-dark .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.88) contrast(1.08) saturate(0.75);
+}
+
+html[data-aegis-theme='light'] .aegis-osm-dark .leaflet-tile-pane {
+  filter: none;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  opacity: 0.45;
+}
+
+/* ——— Light theme: global Tailwind utility overrides ——— */
+html[data-aegis-theme='light'] .min-h-full.bg-black,
+html[data-aegis-theme='light'] .overflow-hidden.bg-black {
+  background-color: var(--aegis-bg) !important;
+}
+
+html[data-aegis-theme='light'] .bg-black,
+html[data-aegis-theme='light'] .bg-black\/80 {
+  background-color: var(--aegis-nav) !important;
+}
+
+html[data-aegis-theme='light'] .bg-black\/60 {
+  background-color: var(--aegis-nav) !important;
+}
+
+html[data-aegis-theme='light'] .bg-black\/50,
+html[data-aegis-theme='light'] .bg-black\/40,
+html[data-aegis-theme='light'] .bg-black\/30,
+html[data-aegis-theme='light'] .bg-black\/20 {
+  background-color: var(--aegis-input) !important;
+}
+
+html[data-aegis-theme='light'] .bg-\[\#0B0B0F\],
+html[data-aegis-theme='light'] .bg-\[\#0a0a0a\],
+html[data-aegis-theme='light'] .bg-\[\#0a0a0a\]\/80,
+html[data-aegis-theme='light'] .bg-\[\#0a0a0a\]\/90 {
+  background-color: var(--aegis-card) !important;
+}
+
+html[data-aegis-theme='light'] .bg-aegis-card {
+  background-color: var(--aegis-card) !important;
+}
+
+html[data-aegis-theme='light'] .bg-grid-fade {
+  background-color: var(--aegis-bg) !important;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aegis-bg) 72%),
+    radial-gradient(circle at 18% 18%, rgba(10, 132, 255, 0.1), transparent 42%),
+    radial-gradient(circle at 82% 4%, rgba(255, 59, 48, 0.06), transparent 34%) !important;
+}
+
+html[data-aegis-theme='light'] .text-white {
+  color: var(--aegis-fg) !important;
+}
+
+html[data-aegis-theme='light'] .text-white\/35,
+html[data-aegis-theme='light'] .text-white\/40,
+html[data-aegis-theme='light'] .text-white\/45,
+html[data-aegis-theme='light'] .text-white\/50,
+html[data-aegis-theme='light'] .text-white\/55,
+html[data-aegis-theme='light'] .text-white\/60,
+html[data-aegis-theme='light'] .text-white\/65,
+html[data-aegis-theme='light'] .text-white\/70,
+html[data-aegis-theme='light'] .text-white\/75,
+html[data-aegis-theme='light'] .text-white\/80,
+html[data-aegis-theme='light'] .text-white\/85 {
+  color: var(--aegis-muted) !important;
+}
+
+html[data-aegis-theme='light'] .border-white\/\[0\.06\],
+html[data-aegis-theme='light'] .border-white\/\[0\.07\],
+html[data-aegis-theme='light'] .border-white\/\[0\.08\],
+html[data-aegis-theme='light'] .border-white\/10,
+html[data-aegis-theme='light'] .border-white\/25 {
+  border-color: var(--aegis-border) !important;
+}
+
+html[data-aegis-theme='light'] .bg-white\/\[0\.03\],
+html[data-aegis-theme='light'] .bg-white\/\[0\.04\],
+html[data-aegis-theme='light'] .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-aegis-theme='light'] .bg-white\/\[0\.92\] {
+  background-color: #1e293b !important;
+}
+
+html[data-aegis-theme='light'] .bg-white\/\[0\.92\] .text-black,
+html[data-aegis-theme='light'] .bg-white\/\[0\.92\] .text-white\/55 {
+  color: #f8fafc !important;
+}
+
+html[data-aegis-theme='light'] .bg-aegis-red,
+html[data-aegis-theme='light'] .bg-aegis-red *,
+html[data-aegis-theme='light'] .bg-aegis-blue,
+html[data-aegis-theme='light'] .bg-aegis-blue *,
+html[data-aegis-theme='light'] .bg-aegis-signin,
+html[data-aegis-theme='light'] .bg-aegis-signin * {
+  color: #ffffff !important;
+}
+
+html[data-aegis-theme='light'] select,
+html[data-aegis-theme='light'] select option {
+  background-color: #fff;
+  color: #111;
+}
+
+html[data-aegis-theme='light'] input,
+html[data-aegis-theme='light'] textarea {
+  color: var(--aegis-fg);
+}
+
+html[data-aegis-theme='light'] button.aegis-switch[aria-checked='false'] {
+  background-color: #cbd5e1 !important;
+  border-color: #94a3b8 !important;
+}
+
+html[data-aegis-theme='light'] button.aegis-switch[aria-checked='true'] {
+  border-color: rgba(15, 23, 42, 0.22) !important;
+}
+
+html[data-aegis-theme='light'] button.aegis-switch .aegis-switch-thumb {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(15, 23, 42, 0.16);
+}
